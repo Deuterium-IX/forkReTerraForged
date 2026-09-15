@@ -435,7 +435,7 @@ public interface IPreviewHandler {
             String labelStr = label.getString();
             if (labelStr.endsWith(": ")) {
                 labelStr = labelStr.substring(0, labelStr.length() - 2);
-            } else if (labelStr.endsWith(":")) {
+            } else if (labelStr.endsWith(":") || labelStr.endsWith("：")) {
                 labelStr = labelStr.substring(0, labelStr.length() - 1);
             }
 
@@ -474,9 +474,9 @@ public interface IPreviewHandler {
 
     static String getTerrainName(Cell cell) {
         if (cell.terrain.isRiver()) {
-            return "river";
+            return PresetTranslations.terrain("river");
         }
-        return cell.terrain.getName().toLowerCase();
+        return PresetTranslations.terrain(cell.terrain.getName());
     }
 
     /** Shared right/middle-click handling. Returns true if the click was handled (caller should not fall through to super). */

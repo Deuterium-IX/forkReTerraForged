@@ -51,7 +51,7 @@ class PresetListPage extends BisectedPage<PresetConfigScreen, AbstractWidget, Ab
 	private static final Path LEGACY_TF_PRESET_PATH = ConfigUtil.legacy_tf("presets");
 	private static final Path LEGACY_FTF_PRESET_PATH = ConfigUtil.legacy_rtf("presets");
 
-	private static final Predicate<String> IS_VALID = Pattern.compile("^[A-Za-z0-9\\-_ ()]+(?<! )$").asPredicate();
+	private static final Predicate<String> IS_VALID = Pattern.compile("^[\\p{L}\\p{N}\\-_ ()（）]+(?<! )$").asPredicate();
 
 	private EditBox input;
 	private Button createPreset;

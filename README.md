@@ -1,4 +1,24 @@
 # FreeTerraForged
+
+## D9 简体中文版（Minecraft 1.21.1）
+
+当前定制版本：`0.0.6006-d9.1`。
+
+- 基于上游 `1.21.1` 分支，合入 [PR #232](https://github.com/ETcodehome/FreeTerraForged/pull/232)（`9db96714cea111b560606df4ee6a99a372117937`），修正群岛海岸线与浅滩生成。
+- 内置 457 条简体中文翻译，覆盖设置项、悬浮说明、预设、选项值和预览图例。将游戏语言切换为「简体中文」即可使用。
+- 支持中文预设名称，以及中文名称的复制、重命名和数据包导出。
+- 提供 Fabric 与 NeoForge 构建；使用与你的加载器匹配的一个安装包。
+
+构建需要 JDK 21：
+
+```powershell
+.\gradlew.bat :common:test :fabric:build :neoforge:build
+```
+
+安装包分别位于 `fabric/build/libs` 和 `neoforge/build/libs`。不要安装 `dev`、`shadow` 或 `sources` JAR。
+
+以下为上游说明。
+
 A community driven fork of the Legendary ReTerraForged project for modern minecraft providing heavily customizable overworld terrain generation.
 Additional feature contributions are welcomed via forking and raising a merge PR.
 

@@ -42,7 +42,7 @@ final class PreviewFailure {
 
         graphics.drawCenteredString(
             Minecraft.getInstance().font,
-            Component.literal("Preview Unavailable"),
+            Component.translatable("freeterraforged.gui.preview.unavailable"),
             x + width / 2,
             iconY + iconHeight + 8,
             0xFFE0E0E0

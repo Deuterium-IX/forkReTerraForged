@@ -63,7 +63,9 @@ final class PresetWidgets {
 	
 	public static <T> CycleButton<T> createCycle(Collection<T> values, T initial, Optional<String> text, CycleButton.OnValueChange<T> callback, Function<T, String> name) {
 		CycleButton.Builder<T> builder = CycleButton.<T>builder((e) -> {
-			return Component.literal(name.apply(e));
+			return e instanceof Enum<?> option
+				? PresetTranslations.text("option", option.name(), name.apply(e))
+				: Component.literal(name.apply(e));
 		}).withInitialValue(initial).withValues(values);
 		if(text.isEmpty()) {
 			builder = builder.displayOnlyValue();
